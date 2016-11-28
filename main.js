@@ -1,29 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import React from 'react'
 
-import App from './App.jsx';
-import Events from './Events.jsx';
-import Change from './Change.jsx';
-import Routes from './Routes.jsx';
-import Home from './pages/Home.jsx';
-import Products from './pages/Products.jsx';
-import About from './pages/About.jsx';
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-ReactDOM.render(<App />, document.getElementById('app'));
-ReactDOM.render(<Events />, document.getElementById('event'));
-ReactDOM.render(<Change />, document.getElementById('onchange'));
-ReactDOM.render(
-    <Router history = {browserHistory}>
-      <Route path = "/" component = {Routes}>
-        <IndexRoute component={Home}/>
-        <Route path = "home" component = {Home}/>
-        <Route path = "products" component = {Products} />
-        <Route path = "about" component = {About} />
-      </Route>
-    </Router>
-,document.getElementById('route'))
+import App from './App.jsx'
+import fishApp from './reducers'
 
-//
-// setTimeout(() => {
-//    ReactDOM.unmountComponentAtNode(document.getElementById('event'));}, 10000);
+let store = createStore(fishApp)
+
+render(
+
+   <Provider store = {store}>
+      <App />
+   </Provider>,
+   document.getElementById('app')
+)

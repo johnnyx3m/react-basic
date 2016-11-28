@@ -1,0 +1,109 @@
+.text-right {
+	text-align: right !important;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.to-right {
+	float: right;
+}
+
+.to-left {
+	float: left;
+}
+
+button, input[type=submit] {
+	-webkit-transition: all 0.2s;
+	background: none;
+	border: $border-width solid $black-color;
+	font-family: 'Open Sans';
+	font-size: 1.5rem;
+	font-weight: $md-font-weight;
+	position: relative;
+	text-transform: uppercase;
+	transition: all 0.2s;
+	z-index: 2;
+}
+
+button[disabled], input[type=submit][disabled] {
+	-webkit-transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+	background: $white-color;
+	border-color: $button-color;
+	color: $button-color;
+	transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+}
+
+button[disabled]:hover, input[type=submit][disabled]:hover {
+	color: $button-color;
+	cursor: not-allowed;
+}
+
+button[disabled]:after, input[type=submit][disabled]:after {
+	display: none;
+}
+
+button:after, input[type=submit]:after {
+	-webkit-transition: all 0.2s;
+	background: $black-color;
+	content: '';
+	display: block;
+	height: 0%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: all 0.2s;
+	width: 100%;
+	z-index: -1;
+}
+
+button:hover, input[type=submit]:hover, button:focus, input[type=submit]:focus {
+	color: $white-color;
+	outline: 0;
+}
+
+button:hover:after, input[type=submit]:hover:after, button:focus:after, input[type=submit]:focus:after {
+	height: 100%;
+}
+
+button.warning:after, input[type=submit].warning:after {
+	background: $button-color;
+}
+
+button.success:after, input[type=submit].success:after {
+	background: $button-success-color;
+}
+
+button.github, input[type=submit].github, button.facebook, input[type=submit].facebook, button.twitter, input[type=submit].twitter {
+	border: 0;
+	color: $white-color;
+	display: block;
+	margin-bottom: 2rem;
+	padding: 2rem;
+	width: 100%;
+}
+
+button.github, input[type=submit].github {
+	background: $button-github;
+}
+
+button.github:after, input[type=submit].github:after {
+	background: $button-github-after;
+}
+
+button.facebook, input[type=submit].facebook {
+	background: $button-facebook;
+}
+
+button.facebook:after, input[type=submit].facebook:after {
+	background: $button-facebook-after;
+}
+
+button.twitter, input[type=submit].twitter {
+	background: $button-twitter;
+}
+
+button.twitter:after, input[type=submit].twitter:after {
+	background: $button-twitter-after;
+}

@@ -1,0 +1,229 @@
+@font-face {
+	font-family: "haymakerregular";
+	font-style: normal;
+	font-weight: $base-font-weight;
+	src: url("./fonts/haymaker-webfont.eot");
+	src: url("./fonts/haymaker-webfont.eot?#iefix") format("embedded-opentype"),
+			url("./fonts/haymaker-webfont.woff") format("woff"),
+			url("./fonts/haymaker-webfont.ttf") format("truetype"),
+			url("./fonts/haymaker-webfont.svg#haymakerregular") format("svg");
+}
+
+@font-face {
+	font-family: 'blanchcaps_inline';
+	font-style: normal;
+	font-weight: $base-font-weight;
+	src: url("./fonts/blanch_caps_inline-webfont.eot");
+	src: url("./fonts/blanch_caps_inline-webfont.eot?#iefix") format("embedded-opentype"),
+			url("./fonts/blanch_caps_inline-webfont.woff") format("woff"),
+			url("./fonts/blanch_caps_inline-webfont.ttf") format("truetype"),
+			url("./fonts/blanch_caps_inline-webfont.svg#blanchcaps_inline") format("svg");
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+	display: block;
+}
+
+audio, canvas, video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-family: sans-serif;
+}
+
+a {
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:active, &:hover {
+		outline: 0;
+	}
+}
+
+h1 {
+	font-size: 2em;
+}
+
+abbr[title] {
+	border-bottom: $border-width dotted;
+}
+
+b, strong {
+	font-weight: $bold-font-weight;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background: $background-mark;
+	color: $black-color;
+}
+
+code, kbd, pre, samp {
+	font-family: monospace, serif;
+	font-size: 1em;
+}
+
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+q {
+	quotes: 2 1 C 2 1 D 2 18 2 19;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+fieldset {
+	border: $border-width solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+}
+
+button, input {
+	line-height: normal;
+}
+
+button, html input[type=button] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+input {
+	&[type=reset], &[type=submit] {
+		-webkit-appearance: button;
+		cursor: pointer;
+	}
+}
+
+button[disabled] {
+	cursor: default;
+}
+
+input {
+	&[disabled] {
+		cursor: default;
+	}
+
+	&[type=checkbox], &[type=radio] {
+		box-sizing: border-box;
+		padding: 0;
+	}
+
+	&[type=search] {
+		-webkit-appearance: textfield;
+		box-sizing: content-box;
+
+		&::-webkit-search-cancel-button, &::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+	}
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body, figure {
+	margin: 0;
+}
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background: $background-color;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2rem;
+}
+
+h1 {
+	font-family: 'blanchcaps_inline', sans-serif;
+	font-weight: $base-font-weight;
+	margin: 0;
+	text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: 'haymakerregular', sans-serif;
+	font-weight: $base-font-weight;
+}
+
+h2 {
+	margin-bottom: 2rem;
+	margin-top: 0;
+	text-align: center;
+}
+
+h3 {
+	font-size: 3rem;
+}
