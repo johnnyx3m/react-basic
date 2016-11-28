@@ -10,7 +10,9 @@ export default class Fish extends Component {
                  <span className="price">${this.props.data.fishPrice}</span>
              </h3>
              <p>{this.props.data.fishDescription}</p>
-             <button>Add To Order</button>
+
+             {this.props.data.status == 'available' ? "<button>Add To Order</button>": <button disabled="disabled">Sold Out!</button>}
+
          </li>
       )
    }
