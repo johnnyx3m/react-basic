@@ -15,12 +15,12 @@ ReactDOM.render(<Events />, document.getElementById('event'));
 ReactDOM.render(<Change />, document.getElementById('onchange'));
 ReactDOM.render(
     <Router history = {browserHistory}>
-      <Route path = "/" component = {Routes}>
-        <IndexRoute component={Home}/>
-        <Route path = "home" component = {Home}/>
-        <Route path = "products" component = {Products} />
-        <Route path = "about" component = {About} />
-      </Route>
+        <Route path = "/" component = {Routes}>
+            <IndexRoute component={Home}/>
+            <Route path = "home" component = {Home}/>
+            <Route path = "products" component = {Products} />
+            <Route path = "about" component = {About} />
+        </Route>
     </Router>
 ,document.getElementById('route'))
 

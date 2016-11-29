@@ -1,17 +1,17 @@
 import React, { Component, PropTypes } from 'react'
-import Fish from './Fish.jsx'
+import FishEdit from './FishEdit.jsx'
 
-export default class FishList extends Component {
+export default class FishEditList extends Component {
     render() {
         return (
-            <ul className="list-of-fishes">
+            <div>
                 {this.props.fishes.map(fish =>
-                    <Fish
+                    <FishEdit
                         key = {fish.id}
                         data = {fish}
                     />
                 )}
-            </ul>
+            </div>
         )
     }
 }

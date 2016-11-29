@@ -9,10 +9,10 @@ import fishApp from './reducers'
 import firebase from 'firebase';
 
 var config = {
-  apiKey: "AIzaSyAYP-CcDz9Q3MOhi2rqKM8FqE0brkwrC7I",
-  authDomain: "plus-6313b.firebaseapp.com",
-  databaseURL: "https://plus-6313b.firebaseio.com",
-  storageBucket: "plus-6313b.appspot.com"
+    apiKey: "AIzaSyAYP-CcDz9Q3MOhi2rqKM8FqE0brkwrC7I",
+    authDomain: "plus-6313b.firebaseapp.com",
+    databaseURL: "https://plus-6313b.firebaseio.com",
+    storageBucket: "plus-6313b.appspot.com"
 };
 
 firebase.initializeApp(config);
@@ -20,9 +20,8 @@ firebase.initializeApp(config);
 let store = createStore(fishApp)
 
 render(
-
-   <Provider store = {store}>
-      <App />
-   </Provider>,
-   document.getElementById('app')
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('app')
 )
