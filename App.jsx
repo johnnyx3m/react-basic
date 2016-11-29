@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
-import Header from './components/Header.jsx'
-import AddFish from './components/AddFish.jsx'
-import FishList from './components/FishList.jsx'
-import OrderList from './components/OrderList.jsx'
-import Github from './components/Github.jsx'
-import Inventory from './components/Inventory.jsx'
+import Header from './components/menu/Header.jsx'
+import AddFish from './components/inventory/AddFish.jsx'
+import FishList from './components/menu/FishList.jsx'
+import OrderList from './components/order/OrderList.jsx'
+import Github from './components/inventory/Github.jsx'
+import Inventory from './components/inventory/Inventory.jsx'
 
 var provider = new firebase.auth.GithubAuthProvider();
 

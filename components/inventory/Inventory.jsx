@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import FishEditList from './FishEditList.jsx'
 import AddFish from './AddFish.jsx'
-import { addFish } from '../actions'
+import { addFish } from '../../actions'
 
 export default class Header extends Component {
     render() {
