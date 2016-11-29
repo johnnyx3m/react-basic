@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addFish } from './actions'
+import firebase from 'firebase'
 
 import Header from './components/Header.jsx'
 import AddFish from './components/AddFish.jsx'
 import FishList from './components/FishList.jsx'
 import OrderList from './components/OrderList.jsx'
 import FishEditList from './components/FishEditList.jsx'
+import Github from './components/Github.jsx'
+
+var provider = new firebase.auth.GithubAuthProvider();
 
 class App extends Component {
     constructor(props){
         super(props);
+        this.state = {
+          authenticated: false
+        }
 
         this.signInGithub = this.signInGithub.bind(this);
     }
@@ -42,10 +49,8 @@ class App extends Component {
                                 dispatch(addFish(data))
                             }}/>
 
-                            <nav className="login">
-                                <p>Sign in to manage your store's inventory</p>
-                                <button onClick = {this.signInGithub} className="github">Log In with Github</button>
-                            </nav>
+                            {this.state.authenticated ? "": <Github onSignInClick = {this.signInGithub}/>}
+
                         </div>
                     </div>
                 </div>

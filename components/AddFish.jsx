@@ -1,8 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import firebase from 'firebase'
 import ReactDOM from 'react-dom'
-
-var provider = new firebase.auth.GithubAuthProvider();
 
 export default class AddFish extends Component {
     constructor(props){
