@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addFish } from './actions'
 import firebase from 'firebase'
 
 import Header from './components/Header.jsx'
 import AddFish from './components/AddFish.jsx'
 import FishList from './components/FishList.jsx'
 import OrderList from './components/OrderList.jsx'
-import FishEditList from './components/FishEditList.jsx'
 import Github from './components/Github.jsx'
+import Inventory from './components/Inventory.jsx'
 
 var provider = new firebase.auth.GithubAuthProvider();
 
@@ -20,6 +19,7 @@ class App extends Component {
         }
 
         this.signInGithub = this.signInGithub.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
     render() {
@@ -39,19 +39,8 @@ class App extends Component {
 
                         <OrderList />
 
-                        <div>
-                            <h2>Inventory</h2>
-                            <button>Log Out!</button>
-
-                            <FishEditList fishes={visibleFishes} />
-
-                            <AddFish onAddClick = {data => {
-                                dispatch(addFish(data))
-                            }}/>
-
-                            {this.state.authenticated ? "": <Github onSignInClick = {this.signInGithub}/>}
-
-                        </div>
+                        {this.state.authenticated ? <Inventory onLogoutClick = {this.logout}
+                            visibleFishes = {visibleFishes} /> : <Github onSignInClick = {this.signInGithub} />}
                     </div>
                 </div>
             </div>
@@ -66,13 +55,16 @@ class App extends Component {
             var token = result.credential.accessToken;
             var user = result.user;
             parent.setState({authenticated: true})
-            parent.forceUpdate();
         }).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             var email = error.email;
             var credential = error.credential;
         });
+    }
+
+    logout(){
+      this.setState({authenticated: false});
     }
 
 }
