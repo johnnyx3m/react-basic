@@ -7,8 +7,8 @@ export default class FishEditList extends Component {
             <div>
                 {this.props.fishes.map(fish =>
                     <FishEdit
-                        key = {fish.id}
-                        data = {fish}
+                        key={fish.id}
+                        data={fish}
                     />
                 )}
             </div>

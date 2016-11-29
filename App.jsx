@@ -34,13 +34,13 @@ class App extends Component {
                     <div className="catch-of-the-day">
                         <div className="menu">
                             <Header />
-                            <FishList fishes = {visibleFishes} />
+                            <FishList fishes={visibleFishes} />
                         </div>
 
                         <OrderList />
 
-                        {this.state.authenticated ? <Inventory onLogoutClick = {this.logout}
-                            visibleFishes = {visibleFishes} /> : <Github onSignInClick = {this.signInGithub} />}
+                        {this.state.authenticated ? <Inventory onLogoutClick={this.logout}
+                            visibleFishes={visibleFishes} dispatch={dispatch} /> : <Github onSignInClick={this.signInGithub} />}
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ class App extends Component {
     }
 
     logout(){
-      this.setState({authenticated: false});
+        this.setState({authenticated: false});
     }
 
 }

@@ -7,8 +7,8 @@ export default class FishList extends Component {
             <ul className="list-of-fishes">
                 {this.props.fishes.map(fish =>
                     <Fish
-                        key = {fish.id}
-                        data = {fish}
+                        key={fish.id}
+                        data={fish}
                     />
                 )}
             </ul>

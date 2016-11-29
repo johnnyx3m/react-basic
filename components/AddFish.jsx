@@ -90,7 +90,7 @@ export default class AddFish extends Component {
                     <input type="text" ref="imageUrl" placeholder="URL to Image" />
                     <button type="submit">+ Add Item</button>
                 </form>
-                <button onClick = {this.loadSampleFishes}>Load Sample Fishes</button>
+                <button onClick={this.loadSampleFishes}>Load Sample Fishes</button>
             </div>
         )
     }
@@ -98,6 +98,10 @@ export default class AddFish extends Component {
     handleAddItemClick(e) {
         e.preventDefault()
         const {fishName, fishPrice, fishDescription, status, imageUrl} = this.refs
+
+        imageUrl.value = imageUrl.value ? imageUrl.value : "assets/css/images/default.png"
+        fishPrice.value = fishPrice.value ? fishPrice.value : 0.00
+
         let data = {
             fishName: fishName.value.trim(),
             fishPrice: fishPrice.value.trim(),

@@ -10,8 +10,8 @@ export default class Header extends Component {
               <h2>Inventory</h2>
               <button onClick={this.props.onLogoutClick}>Log Out!</button>
               <FishEditList fishes={this.props.visibleFishes} />
-              <AddFish onAddClick = {data => {
-                  dispatch(addFish(data))
+              <AddFish onAddClick={data => {
+                  this.props.dispatch(addFish(data))
               }}/>
           </div>
         )
