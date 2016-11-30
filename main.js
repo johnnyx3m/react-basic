@@ -1,9 +1,9 @@
 import React from 'react'
 import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 
-import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import App from './components/App.jsx'
 import Main from './components/Main.jsx'
@@ -20,7 +20,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-let store = createStore(fishApp)
+let store = createStore(fishApp);
 
 render(
     <Provider store={store}>

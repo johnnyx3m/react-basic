@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
-import FishEdit from './FishEdit.jsx'
+import React, { Component, PropTypes } from 'react';
+import FishEdit from './FishEdit.jsx';
+import { removeFish } from '../../actions';
 
 export default class FishEditList extends Component {
     render() {
@@ -7,8 +8,11 @@ export default class FishEditList extends Component {
             <div>
                 {this.props.fishes.map(fish =>
                     <FishEdit
-                        key = {fish.id}
-                        data = {fish}
+                        key={fish.id}
+                        data={fish}
+                        onRemoveClick={key => {
+                            this.props.dispatch(removeFish(key))
+                        }}
                     />
                 )}
             </div>
