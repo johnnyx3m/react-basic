@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Order from './Order.jsx';
+import { removeOrder } from '../../actions';
 
 export default class OrderList extends Component {
     render() {
@@ -11,6 +12,9 @@ export default class OrderList extends Component {
                         <Order
                             key={orderedFish.id}
                             data={orderedFish}
+                            onRemoveClick={key => {
+                                this.props.dispatch(removeOrder(key))
+                            }}
                         />
                     )}
                     <li className="total">

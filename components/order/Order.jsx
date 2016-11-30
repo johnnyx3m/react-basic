@@ -1,6 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class Order extends Component {
+    constructor(props) {
+        super(props);
+
+        this.removeOrder = this.removeOrder.bind(this);
+    }
+
     render() {
         return (
             <li className="">
@@ -10,10 +16,14 @@ export default class Order extends Component {
                     </span>
                     lbs
                     {this.props.data.fishName}
-                    <button>×</button>
+                    <button onClick={this.removeOrder}>×</button>
                 </span>
                 <span className="price">${this.props.data.fishPrice}</span>
             </li>
         )
+    }
+
+    removeOrder() {
+        this.props.onRemoveClick(this.props.data.id);
     }
 }
