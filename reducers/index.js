@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_FISH } from '../actions'
+import { ADD_FISH, LOGOUT } from '../actions'
 
 function fish(state, action) {
     switch (action.type) {
@@ -33,8 +33,22 @@ function fishes(state = [], action) {
     }
 }
 
+
+function session(state = {}, action){
+  switch (action.type) {
+    case LOGOUT:
+      return Object.assign({}, state, {
+        completed: false
+      })
+
+    default:
+      return state
+  }
+}
+
 const fishApp = combineReducers({
-    fishes
+    fishes,
+    session
 })
 
 export default fishApp
