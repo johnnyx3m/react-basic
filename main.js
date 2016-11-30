@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-import App from './App.jsx'
-import fishApp from './reducers'
+import App from './App.jsx';
+import fishApp from './reducers';
 import firebase from 'firebase';
 
 var config = {
@@ -17,7 +17,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-let store = createStore(fishApp)
+let store = createStore(fishApp);
 
 render(
     <Provider store={store}>

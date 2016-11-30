@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import firebase from 'firebase'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import firebase from 'firebase';
 
-import Header from './components/menu/Header.jsx'
-import AddFish from './components/inventory/AddFish.jsx'
-import FishList from './components/menu/FishList.jsx'
-import OrderList from './components/order/OrderList.jsx'
-import Github from './components/inventory/Github.jsx'
-import Inventory from './components/inventory/Inventory.jsx'
+import Header from './components/menu/Header.jsx';
+import AddFish from './components/inventory/AddFish.jsx';
+import FishList from './components/menu/FishList.jsx';
+import OrderList from './components/order/OrderList.jsx';
+import Github from './components/inventory/Github.jsx';
+import Inventory from './components/inventory/Inventory.jsx';
 
 var provider = new firebase.auth.GithubAuthProvider();
 
@@ -16,14 +16,14 @@ class App extends Component {
         super(props);
         this.state = {
           authenticated: false
-        }
+        };
 
         this.signInGithub = this.signInGithub.bind(this);
         this.logout = this.logout.bind(this);
     }
 
     render() {
-        const { dispatch, visibleFishes } = this.props
+        const { dispatch, visibleFishes } = this.props;
 
         return (
             <div>
@@ -72,7 +72,7 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
         visibleFishes: state.fishes
-    }
+    };
 }
 
 export default connect(mapStateToProps)(App)

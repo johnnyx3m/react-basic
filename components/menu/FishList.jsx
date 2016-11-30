@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react'
-import Fish from './Fish.jsx'
+import React, { Component, PropTypes } from 'react';
+import Fish from './Fish.jsx';
 
 export default class FishList extends Component {
     render() {

@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux'
-import { ADD_FISH } from '../actions'
+import { combineReducers } from 'redux';
+import { ADD_FISH, REMOVE_FISH } from '../actions';
 
 function fish(state, action) {
     switch (action.type) {
@@ -12,10 +12,10 @@ function fish(state, action) {
                 fishDescription: action.fishDescription,
                 status: action.status,
                 imageUrl: action.imageUrl
-            }
+            };
 
         default:
-            return state
+            return state;
    }
 }
 
@@ -26,10 +26,13 @@ function fishes(state = [], action) {
             return [
                 ...state,
                 fish(undefined, action)
-            ]
+            ];
+
+        case REMOVE_FISH:
+            return state.filter(t => t.id != action.key);
 
         default:
-            return state
+            return state;
     }
 }
 

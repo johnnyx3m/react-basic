@@ -1,11 +1,10 @@
-import React, { Component, PropTypes } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class AddFish extends Component {
     constructor(props){
         super(props);
         this.state = {
-            authenticated: 0,
             allFishes:  [
                 {
                     fishName: "Pacific Halibut",
@@ -96,11 +95,11 @@ export default class AddFish extends Component {
     }
 
     handleAddItemClick(e) {
-        e.preventDefault()
-        const {fishName, fishPrice, fishDescription, status, imageUrl} = this.refs
+        e.preventDefault();
+        const {fishName, fishPrice, fishDescription, status, imageUrl} = this.refs;
 
-        imageUrl.value = imageUrl.value ? imageUrl.value : "assets/css/images/default.png"
-        fishPrice.value = fishPrice.value ? fishPrice.value : 0.00
+        imageUrl.value = imageUrl.value ? imageUrl.value : "assets/css/images/default.png";
+        fishPrice.value = fishPrice.value ? fishPrice.value : 0.00;
 
         let data = {
             fishName: fishName.value.trim(),
@@ -108,19 +107,13 @@ export default class AddFish extends Component {
             fishDescription: fishDescription.value.trim(),
             status: status.value.trim(),
             imageUrl: imageUrl.value.trim(),
-        }
-        this.props.onAddClick(data)
+        };
+        this.props.onAddClick(data);
     }
 
     loadSampleFishes() {
         this.state.allFishes.map(fish => {
-            this.props.onAddClick({
-                fishName: fish.fishName,
-                fishPrice: fish.fishPrice,
-                fishDescription: fish.fishDescription,
-                status: fish.status,
-                imageUrl: fish.imageUrl
-            })
-        })
+            this.props.onAddClick(fish)
+        });
     }
 }

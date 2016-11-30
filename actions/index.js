@@ -1,4 +1,5 @@
-export const ADD_FISH = 'ADD_FISH'
+export const ADD_FISH = 'ADD_FISH';
+export const REMOVE_FISH = 'REMOVE_FISH';
 
 let nextFishId = 0;
 
@@ -11,5 +12,12 @@ export function addFish(data) {
         fishDescription: data.fishDescription,
         status: data.status,
         imageUrl: data.imageUrl
+    };
+}
+
+export function removeFish(key) {
+    return {
+        type: REMOVE_FISH,
+        key
     };
 }
