@@ -18,7 +18,7 @@ export default class Order extends Component {
                     {this.props.data.fishName}
                     <button onClick={this.removeOrder}>×</button>
                 </span>
-                <span className="price">${this.props.data.fishPrice}</span>
+                <span className="price">${(this.props.data.fishPrice * this.props.data.quantity)}</span>
             </li>
         )
     }

@@ -10,6 +10,7 @@ export default class FishList extends Component {
                     <Fish
                         key={fish.id}
                         data={fish}
+                        orderedFishes={this.props.orderedFishes}
                         onAddOrder={orderedFish => {
                             this.props.dispatch(addOrder(orderedFish))
                         }}
