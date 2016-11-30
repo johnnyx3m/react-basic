@@ -10,7 +10,7 @@ export default class Inventory extends Component {
               <h2>Inventory</h2>
               <button onClick={this.props.onLogoutClick}>Log Out!</button>
 
-              <FishEditList dispatch={this.props.dispatch} fishes={this.props.visibleFishes} />
+              <FishEditList dispatch={this.props.dispatch} fishes={this.props.availableFishes} />
 
               <AddFish onAddClick={data => {
                   this.props.dispatch(addFish(data))

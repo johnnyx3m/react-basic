@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_FISH, REMOVE_FISH } from '../actions';
+import { ADD_FISH, ADD_ORDER, REMOVE_FISH } from '../actions';
 
 function fish(state, action) {
     switch (action.type) {
@@ -12,6 +12,22 @@ function fish(state, action) {
                 fishDescription: action.fishDescription,
                 status: action.status,
                 imageUrl: action.imageUrl
+            };
+
+        default:
+            return state;
+   }
+}
+
+function orderedFish(state, action) {
+    switch (action.type) {
+
+        case ADD_ORDER:
+            return {
+                id: action.id,
+                quantity: action.quantity,
+                fishName: action.fishName,
+                fishPrice: action.fishPrice
             };
 
         default:
@@ -36,8 +52,26 @@ function fishes(state = [], action) {
     }
 }
 
+function orderedFishes(state = [], action) {
+    switch (action.type) {
+
+        case ADD_ORDER:
+            return [
+                ...state,
+                orderedFish(undefined, action)
+            ];
+
+        case REMOVE_FISH:
+            return state.filter(t => t.id != action.key);
+
+        default:
+            return state;
+    }
+}
+
+
 const fishApp = combineReducers({
-    fishes
+    fishes, orderedFishes
 })
 
 export default fishApp

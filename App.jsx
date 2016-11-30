@@ -23,7 +23,7 @@ class App extends Component {
     }
 
     render() {
-        const { dispatch, visibleFishes } = this.props;
+        const { dispatch, availableFishes, orderedFishes } = this.props;
 
         return (
             <div>
@@ -34,13 +34,16 @@ class App extends Component {
                     <div className="catch-of-the-day">
                         <div className="menu">
                             <Header />
-                            <FishList fishes={visibleFishes} />
+                            <FishList fishes={availableFishes} dispatch={dispatch} />
                         </div>
 
-                        <OrderList />
+                        <OrderList orderedFishes={orderedFishes} dispatch={dispatch}/>
 
-                        {this.state.authenticated ? <Inventory onLogoutClick={this.logout}
-                            visibleFishes={visibleFishes} dispatch={dispatch} /> : <Github onSignInClick={this.signInGithub} />}
+                        {
+                            this.state.authenticated ?
+                            <Inventory onLogoutClick={this.logout} availableFishes={availableFishes} dispatch={dispatch} /> :
+                            <Github onSignInClick={this.signInGithub} />
+                        }
                     </div>
                 </div>
             </div>
@@ -71,7 +74,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        visibleFishes: state.fishes
+        availableFishes: state.fishes,
+        orderedFishes: state.orderedFishes
     };
 }
 

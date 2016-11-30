@@ -1,5 +1,6 @@
 export const ADD_FISH = 'ADD_FISH';
 export const REMOVE_FISH = 'REMOVE_FISH';
+export const ADD_ORDER = 'ADD_ORDER';
 
 let nextFishId = 0;
 
@@ -19,5 +20,15 @@ export function removeFish(key) {
     return {
         type: REMOVE_FISH,
         key
+    };
+}
+
+export function addOrder(data) {
+    return {
+        type: ADD_ORDER,
+        id: nextFishId++,
+        quantity: data.quantity,
+        fishName: data.fishName,
+        fishPrice: data.fishPrice
     };
 }
