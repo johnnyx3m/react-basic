@@ -8,7 +8,7 @@ let nextFishId = 0;
 export function addFish(data) {
     return {
         type: ADD_FISH,
-        id: nextFishId++,
+        id: data.id,
         fishName: data.fishName,
         fishPrice: data.fishPrice,
         fishDescription: data.fishDescription,

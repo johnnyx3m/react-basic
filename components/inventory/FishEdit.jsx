@@ -12,7 +12,7 @@ export default class FishEdit extends Component {
         return (
             <div className="fish-edit">
                 <input type="text" ref="fishName" placeholder="Fish Name" value={this.props.data.fishName} />
-                <input type="number" ref="fishPrice" placeholder="Fish Price" value={this.props.data.fishPrice} />
+                <input type="number" ref="fishPrice" placeholder="Fish Price" value={parseInt(this.props.data.fishPrice, 10).toFixed(2)} />
                 <select ref="status" value={this.props.data.status} onChange={this.handleChange}>
                     <option value="available">Fresh!</option>
                     <option value="unavailable">Sold Out!</option>

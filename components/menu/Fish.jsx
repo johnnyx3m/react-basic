@@ -7,7 +7,7 @@ export default class Fish extends Component {
                 <img src={this.props.data.imageUrl} alt={this.props.data.fishName} />
                 <h3 className="fish-name">
                     {this.props.data.fishName}
-                    <span className="price">${this.props.data.fishPrice}</span>
+                    <span className="price">${parseInt(this.props.data.fishPrice, 10).toFixed(2)}</span>
                 </h3>
                 <p>{this.props.data.fishDescription}</p>
 
@@ -22,14 +22,13 @@ export default class Fish extends Component {
 
     addOrder(e) {
         e.preventDefault();
-
         let order = this.props.data;
         let qty = 1;
         let data = {
             id: order.id,
             quantity: qty++,
             fishName: order.fishName,
-            fishPrice: order.fishPrice
+            fishPrice: parseInt(order.fishPrice, 10).toFixed(2)
         };
 
         this.props.onAddOrder(data);

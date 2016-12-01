@@ -6,10 +6,11 @@ export default class FishEditList extends Component {
     render() {
         return (
             <div>
-                {this.props.fishes.map(fish =>
+                {this.props.fishes.map((fish, index) =>
                     <FishEdit
-                        key={fish.id}
+                        key={index}
                         data={fish}
+                        fishes={this.props.availableFishes}
                         onRemoveClick={key => {
                             this.props.dispatch(removeFish(key))
                         }}

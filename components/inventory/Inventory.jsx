@@ -12,7 +12,7 @@ export default class Inventory extends Component {
 
               <FishEditList dispatch={this.props.dispatch} fishes={this.props.availableFishes} />
 
-              <AddFish onAddClick={data => {
+              <AddFish fishes={this.props.availableFishes} onAddClick={data => {
                   this.props.dispatch(addFish(data))
               }}/>
           </div>

@@ -6,9 +6,9 @@ export default class FishList extends Component {
     render() {
         return (
             <ul className="list-of-fishes">
-                {this.props.fishes.map(fish =>
+                {this.props.fishes.map((fish, index) =>
                     <Fish
-                        key={fish.id}
+                        key={index}
                         data={fish}
                         orderedFishes={this.props.orderedFishes}
                         onAddOrder={orderedFish => {
