@@ -98,7 +98,7 @@ export default class AddFish extends Component {
         e.preventDefault();
         const {fishName, fishPrice, fishDescription, status, imageUrl} = this.refs;
 
-        imageUrl.value = imageUrl.value ? imageUrl.value : "assets/css/images/default.png";
+        imageUrl.value = imageUrl.value ? imageUrl.value : "/assets/scss/images/default.png";
         fishPrice.value = fishPrice.value ? fishPrice.value : 0.00;
 
         let data = {

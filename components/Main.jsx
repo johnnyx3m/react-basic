@@ -1,13 +1,13 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import firebase from 'firebase'
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import firebase from 'firebase';
 
-import Header from './menu/Header.jsx'
-import AddFish from './inventory/AddFish.jsx'
-import FishList from './menu/FishList.jsx'
-import OrderList from './order/OrderList.jsx'
-import Github from './inventory/Github.jsx'
-import Inventory from './inventory/Inventory.jsx'
+import Header from './menu/Header.jsx';
+import AddFish from './inventory/AddFish.jsx';
+import FishList from './menu/FishList.jsx';
+import OrderList from './order/OrderList.jsx';
+import Github from './inventory/Github.jsx';
+import Inventory from './inventory/Inventory.jsx';
 
 var provider = new firebase.auth.GithubAuthProvider();
 
@@ -15,14 +15,15 @@ class Main extends Component {
     constructor(){
         super();
         this.state = {
-            authenticated: false
+            authenticated: localStorage.getItem('token') ? true : false
         };
 
         this.signInGithub = this.signInGithub.bind(this);
         this.logout = this.logout.bind(this);
     }
+
     render() {
-        const { dispatch, availableFishes, orderedFishes } = this.props
+        const { dispatch, availableFishes, orderedFishes } = this.props;
         return (
             <div>
                 <label htmlFor="fold">Fold</label>
@@ -47,6 +48,7 @@ class Main extends Component {
             </div>
         )
     }
+
     signInGithub(){
         var parent = this;
 
@@ -54,7 +56,9 @@ class Main extends Component {
         .then(function(result) {
             var token = result.credential.accessToken;
             var user = result.user;
-            parent.setState({authenticated: true})
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', user);
+            parent.setState({authenticated: true});
         }).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -64,6 +68,8 @@ class Main extends Component {
     }
 
     logout(){
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
         this.setState({authenticated: false});
     }
 }
@@ -73,7 +79,7 @@ function mapStateToProps(state) {
     return {
         availableFishes: state.fishes,
         orderedFishes: state.orderedFishes
-    }
+    };
 }
 
 export default connect(mapStateToProps)(Main)

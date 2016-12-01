@@ -4,7 +4,6 @@ import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router'
 
 class RouterApp extends React.Component {
    render() {
-     console.log("test");
       return (
          <div>
             <ul>

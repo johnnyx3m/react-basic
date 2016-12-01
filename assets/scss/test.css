@@ -559,18 +559,6 @@ button.github, input[type=submit].github {
 button.github:after, input[type=submit].github:after {
   background: #5cc437; }
 
-button.facebook, input[type=submit].facebook {
-  background: #3864a3; }
-
-button.facebook:after, input[type=submit].facebook:after {
-  background: #2d5082; }
-
-button.twitter, input[type=submit].twitter {
-  background: #5ea9dd; }
-
-button.twitter:after, input[type=submit].twitter:after {
-  background: #2c8dd0; }
-
 /* Menu */
 /* Order Wrap */
 /* Orders */
